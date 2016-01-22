@@ -1,0 +1,27 @@
+//============================================================================
+// Name        : duplicates.cpp
+// Description : return duplicates in an array
+//============================================================================
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void duplicate(int a[],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		if (a[abs(a[i])]>=0)
+		{
+			a[abs(a[i])] = -a[abs(a[i])];
+		}
+		else
+			cout << abs(a[i]) << " ";
+	}
+}
+
+int main() {
+	int a[] = {1,5,6,3,4,5,5,5,7,8,9,1,10,2};
+	int n = sizeof(a)/sizeof(a[0]);
+	duplicate(a,n);
+	return 0;
+}
