@@ -1,0 +1,42 @@
+//============================================================================
+// Name        : segregate_oddeven.cpp
+// Description : segregate odd and even numbers
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+void oddeven(int a[], int n)
+{
+	int i, left=0, right=n-1;
+	int temp;
+	while (left<right)
+	{
+		while (a[left]%2==0 && left<right)
+		{
+			left ++;
+		}
+		while (a[right]%2 == 1 && left < right)
+		{
+			right--;
+		}
+		if (left<right)
+		{
+			temp = a[left];
+			a[left] = a[right];
+			a[right] = temp;
+			left++;
+			right--;
+		}
+	}
+	for (i=0;i<n;i++)
+	{
+		cout<< a[i] << " ";
+	}
+}
+int main() {
+	int a[] = {1,4,2,3,3,9,4,6,8,6,3,2,5,6,7,6};
+	int n = sizeof(a)/sizeof(a[0]);
+	oddeven(a,n);
+	return 0;
+}
