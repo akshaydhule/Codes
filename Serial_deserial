@@ -1,0 +1,56 @@
+// functions to serialize and deserialize binary tree
+
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+
+struct node * root
+{
+	int data;
+	struct node * left;
+	struct node * right;
+};
+
+struct node * newnode (int a)
+{
+	struct node * node;
+	node->data = a;
+	node->left NULL;
+	node->right NULL;
+	return (node);
+}
+void serialize(struct node * root, FILE *fp)
+{
+	if(root == NULL)
+	{
+		return;
+	}
+	else
+	{
+		fprintf(fp, "%d", root->value);
+		serialize(root->left, fp);
+		serialize(root->right,fp);
+	}
+}
+void deserialize(struct node * root, FILE *fp)
+{
+	int d;
+	if(!fscanf(fp,"%d",&d) || d == -1)
+	{
+		return;
+	}
+	else
+	{
+		root = newnode(d);
+		deserialize(root->left, fp);
+		deserialize(root->right,fp);
+	}
+}
+
+
+int main() {
+	// your code goes here
+	return 0;
+}
