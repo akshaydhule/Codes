@@ -53,12 +53,12 @@ void detect_duplicates(struct node ** head)
 	cout<<"\n";
 	print(*head);
 }
-void sortlist(struct node ** head)
+void sortlist(struct node ** head, int no_of_nodes)
 {
 	struct node *pointer = *head;
 	int i=0;
 	int n=0;
-	int * a = (int * )malloc (sizeof(int));
+	int * a = (int * )malloc (no_of_nodes*sizeof(int));
 	while (pointer!=NULL)
 	{
 		a[i] = pointer->data;
@@ -86,7 +86,7 @@ int main() {
 		push(&head, 25);
 		print(head);
 		cout<<"\n";
-		sortlist(&head);
+		sortlist(&head, 7);
 		cout<<"\n";
 		print(head);
 		detect_duplicates(&head);
