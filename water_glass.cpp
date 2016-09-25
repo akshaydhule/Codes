@@ -31,6 +31,8 @@ float water_quantity(int i, int j, float X)
 	int water_left = X - water_finish(i);
 	if(water_left <=0)
 		return 0;
+	if (i==1)
+		return 1;
 	else
 	{
 		if (j == 1 || j == i)
