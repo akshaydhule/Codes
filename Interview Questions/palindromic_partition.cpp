@@ -11,18 +11,6 @@ using namespace std;
 
 bool **palin;
 
-void printarray(int start, int end)
-{
-	cout<<"the array is:";
-	for(int i=start;i<end;i++)
-	{
-		for(int j=start;j<end;j++)
-		{
-			cout<<palin[i][j]<<" ";
-		}
-		cout<<"\n";
-	}
-}
 string substring(string s, int i, int j)
 {
 	string a;
@@ -30,7 +18,7 @@ string substring(string s, int i, int j)
 		a += s[k];
 	return a;
 }
-
+//print the string partition
 void print(stack <string> order)
 {
 	if(order.empty())
@@ -50,7 +38,7 @@ void printmat(string s, int l, int r, int n, stack<string> &st)
 	vector<int> index;
 	if(l>r)
 	{
-		print(st);
+		print(st); //if end of string print the partition
 		cout<<"\n";
 		return;
 	}
@@ -58,15 +46,15 @@ void printmat(string s, int l, int r, int n, stack<string> &st)
 	{
 		for(int j =l;j<=r;j++)
 		{
-			if(palin[l][j]==true)
+			if(palin[l][j]==true) //find end index of substring
 			{
 				index.push_back(j);
 			}
 		}
 		for(auto it = index.begin();it!=index.end();it++)
 		{
-			st.push(substring(s, l,*it));
-			printmat(s, *it+1, r, n, st);
+			st.push(substring(s, l,*it)); //push substring to stack
+			printmat(s, *it+1, r, n, st); //recursive for rest of string
 			st.pop();
 		}
 	}
@@ -74,9 +62,10 @@ void printmat(string s, int l, int r, int n, stack<string> &st)
 
 void substring(string s)
 {
-	int n = s.size(), maxlen=0, l=0,u=0;
+	int n = s.size(), maxlen=0, l=0;
+	stack<string> st;
 	bool mat[n][n];
-	memset(mat, false, sizeof(mat));
+	memset(mat, false, sizeof(mat)); //initialize the mat with all false
 	for(int i=0;i<n;i++)
 		mat[i][i] = true;
 	maxlen = 1;
@@ -102,9 +91,11 @@ void substring(string s)
 			}
 		}
 	}
+	//initialize palin
 	palin = new bool *[n];
 	for(int i=0;i<n;i++)
 		palin[i] = new bool[n];
+	//copy the mat into palin
 	for(int i=0;i<n;i++)
 	{
 		for(int j=0;j<n;j++)
@@ -112,10 +103,9 @@ void substring(string s)
 			palin[i][j] = mat[i][j];
 		}
 	}
-
-	stack<string> st;
 	printmat( s, 0, n-1, n, st);
 }
+
 int main() {
 	string s = "aabb";
 	substring(s);
