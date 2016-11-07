@@ -76,11 +76,13 @@ bool detectduplicate(node * root)
 		{
 			string s = inOrder[i] + '-' + postOrder[i];
 			if(subtrees.find(s)!= subtrees.end())
-				return false;
+			{
+				return true;
+			}
 			else
 				subtrees.insert(s);
 		}
-		return true;
+		return false;
 	}
 }
 
@@ -93,8 +95,11 @@ int main() {
 	node * lr = new node('D');
 	l->left = ll; l->right = lr;
 	node * rl = new node('C');
-	node * rr = new node('B');
+	node * rr = new node('D');
 	r->left = rl; r->right = rr;
-	cout<<detectduplicate(root);
+	if(detectduplicate(root) == true)
+		cout<<"true";
+	else
+		cout<<"false";
 	return 0;
 }
