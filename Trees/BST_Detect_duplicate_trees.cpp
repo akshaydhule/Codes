@@ -29,9 +29,9 @@ string postorder(node * root, vector<string> &postOrder)
 	else
 	{
 		string temp = "";
-		if(root->left!= NULL)
-			temp = postorder(root->left, postOrder);
 		temp = temp + root->data;
+		if(root->left!= NULL)
+			temp += postorder(root->left, postOrder);
 		if(root->left!= NULL)
 			temp = temp + postorder(root->right, postOrder);
 		postOrder.push_back(temp);
@@ -89,14 +89,17 @@ bool detectduplicate(node * root)
 int main() {
 	node * root = new node('A');
 	node * l = new node('B');
-	node * r = new node('B');
+	node * r = new node('C');
 	root->left = l; root->right = r;
-	node * ll = new node('C');
-	node * lr = new node('D');
+	node * ll = new node('D');
+	node * lr = new node('E');
 	l->left = ll; l->right = lr;
-	node * rl = new node('C');
-	node * rr = new node('D');
+	node * rl = new node('F');
+	node * rr = new node('B');
 	r->left = rl; r->right = rr;
+	node * rrl = new node('D');
+	node * rrr = new node('E');
+	rr->left =rrl; rr->right = rrr;
 	if(detectduplicate(root) == true)
 		cout<<"true";
 	else
