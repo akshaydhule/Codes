@@ -57,7 +57,7 @@ int main() {
 	for(int i=0;i<m;i++)
 		c[i] = a[n+i];
 	std::sort(c,c+m+n, compareid);
-	for(int i=0;i<m+m;i++)
+	for(int i=0;i<m+n;i++)
 	{
 		if(c[j] == c[i])
 			c[j].value += c[i].value;
