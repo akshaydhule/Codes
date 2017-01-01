@@ -15,44 +15,28 @@ struct node
 	struct node * left, *right;
 };
 
-struct node * binarytodll(struct node * root)
+class Lnode
 {
-	if(root == NULL)
-	{
-		return root;
-	}
-	if(root->left!=NULL)
-	{
-		struct node * left = binarytodll(root->left);
-		while(left->right!=NULL)
-		{
-			left=left->right;
-		}
-		left->right = root;
-		root->left = left;
-	}
-	if(root->right!=NULL)
-	{
-		struct node * right = binarytodll(root->right);
-		while(root->left!=NULL)
-		{
-			right = right->left;
-		}
-		right->left = root;
-		root->right = right;
-	}
-	return root;
-}
+public:
+	int data;
+	Lnode * prev, *next;
+	Lnode(int data): data(data), prev(NULL), next(NULL){}
+};
 
-struct node * bsttodll(struct node * root)
+Lnode * bst_to_dll(struct node * root)
 {
-	if(root==NULL)
+	if (root->left==NULL && root->right == NULL)
 	{
-		return root;
+		struct Lnode * curr = new Lnode(root->data);
+		return curr;
 	}
-	struct node * head = binarytodll(root);
-	while(head->left!=NULL)
-		head = head->left;
+	Lnode * head = bst_to_dll(root->left);
+	Lnode * curr = new Lnode(root->data);
+	head->next = curr;
+	curr->prev = head;
+	Lnode *next = bst_to_dll(root->right);
+	curr->next = next;
+	next->prev = curr;
 	return head;
 }
 
@@ -68,11 +52,11 @@ int main() {
 	struct node *root = newnode(4);
 	root->left = newnode(3);
 	root->right = newnode(5);
-	struct node * head = bsttodll(root);
+	Lnode * head = bst_to_dll(root);
 	while(head!=NULL)
 	{
 		cout<<head->data;
-		head=head->right;
+		head=head->next;
 	}
 	return 0;
 }
