@@ -11,7 +11,7 @@ using namespace std;
 
 int main() {
 	bool a[1001];
-	for(int i=0;i<=1001;i++)
+	for(int i=0;i<=1000;i++)
 	{
 		a[i]=0;
 	}
