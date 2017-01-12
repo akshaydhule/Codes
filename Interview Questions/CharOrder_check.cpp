@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : UberQ3_charOrder.cpp
+// Name        : CharOrder_check.cpp
 // Description : Given an input string and ordering string, need to return true
  * if the ordering string is present in Input string.
 
