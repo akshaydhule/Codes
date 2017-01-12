@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ6.cpp
+// Name        : InterviewQuestion6.cpp
 // Description : GIven a list of words, and the number of rows and columns,
 return the number of words that can be fit into the rows and columns by
 stringing together each consecutive word. If the next word doesn't fit in the same line,
