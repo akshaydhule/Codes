@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ9.cpp
+// Name        : InterviewQuestion9.cpp
 // Description : You have rating (0-10) of the hotels per user in this format:
 
 scores = [
