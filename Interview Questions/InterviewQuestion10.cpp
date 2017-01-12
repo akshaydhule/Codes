@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : UberQ1.cpp
+// Name        : InterviewQuestion10.cpp
 // Description : Given input which is vector of log entries of some online
  * system each entry is something like (user_name, login_time, logout_time),
  * come up with an algorithm with outputs number of users logged in the system
