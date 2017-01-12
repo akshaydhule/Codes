@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ5.cpp
+// Name        : InterviewQuestion5.cpp
 // Description :
  * 1. Find the node where cycle starts in a linked list
  * 2. Find the index when slow and fast pointer meet in terms of n
