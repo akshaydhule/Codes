@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ4.cpp
+// Name        : InterviewQuestion4.cpp
 // Description : Given two object arrays of "id,weight" (sorted by weight),
  * merge them together and create a one single array.
  * If the "id"s are same values should be merged.
