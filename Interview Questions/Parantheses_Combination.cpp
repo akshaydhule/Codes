@@ -1,13 +1,13 @@
 /*
 //============================================================================
-// Name        : UberQ2.cpp
+// Name        : Parantheses_Combination.cpp
 // Description :
-Each test file starts with an integer ‘t’ - the number of testcases.
-In each of the next ‘t’ lines, you are given a string of ‘n’ characters
-[ either ‘(‘ or ’)’ or ‘*’ ].
+Each test file starts with an integer â€˜tâ€™ - the number of testcases.
+In each of the next â€˜tâ€™ lines, you are given a string of â€˜nâ€™ characters
+[ either â€˜(â€˜ or â€™)â€™ or â€˜*â€™ ].
 Your task is to find the number of distinct balanced parentheses expressions
-you can make by replacing the ‘*’ with either ‘(‘ or ‘)’ or removing the ‘*’
-Note : You have to replace each ‘*’ with one of ‘(‘ or ‘)’ or remove it.
+you can make by replacing the â€˜*â€™ with either â€˜(â€˜ or â€˜)â€™ or removing the â€˜*â€™
+Note : You have to replace each â€˜*â€™ with one of â€˜(â€˜ or â€˜)â€™ or remove it.
 If removed, assume the string has reduced by 1 character.
 Duplicate strings are not allowed. The final expressions to be counted
 have to be distinct
@@ -16,7 +16,7 @@ Output one integer per line corresponding to each testcase.
 Constraints :
 1 <= t <= 20
 1 <= n <= 100
-0 <= Number of ‘*’ in the input string <= min(n,10)
+0 <= Number of â€˜*â€™ in the input string <= min(n,10)
 
 Sample Input:
 
