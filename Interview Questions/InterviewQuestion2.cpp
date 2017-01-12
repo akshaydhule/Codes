@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ2.cpp
+// Name        : InterviewQuestion2.cpp
 // Description : Given two integer arrays list1 and list2 and an int target value.
  * WAP to check if there exists such a sum, where one number taken from list1
  * and other from list2 to add up to become the target value.
