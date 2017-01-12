@@ -1,6 +1,6 @@
 /*
 //============================================================================
-// Name        : GoogleQ8.cpp
+// Name        : InterviewQuestion8.cpp
 // Description : Find the largest and smallest number in a list.
  * The list is stored as two sections, one in ascending order
  * and the other in descending order.
