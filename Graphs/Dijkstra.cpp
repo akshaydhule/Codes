@@ -53,6 +53,9 @@ public:
 		}
 		visited[i] = 2;
 	}
+	/* 
+	visited[] = {0 : not visited, 1 : added[in process], 2 : visited}
+	*/
 	int shortestdist(int a, int b)
 	{
 		int visited[v+1];
