@@ -35,6 +35,11 @@ public:
 		edges.insert( make_pair(make_pair(i,j), val) );
 		edges.insert( make_pair(make_pair(j, i), val) );
 	}
+	
+	/* 
+	Function : childcheck
+	parameters : i-current; visited-list; distance-list
+	*/
 	void childcheck(int i, int *visited,int *dist)
 	{
 		visited[i] = 1;
@@ -54,7 +59,11 @@ public:
 		visited[i] = 2;
 	}
 	/* 
-	visited[] = {0 : not visited, 1 : added[in process], 2 : visited}
+	Function : Shortestdist()
+	Parameters : a-start; b-end
+	Data structures : Adjacency matrix to maintain neighbors of each node , 
+			  visited[](to avoid loop) {0 : not visited, 1 : added[in process], 2 : visited}, 
+			  distance[] (to avoid re-run/redundant checks)
 	*/
 	int shortestdist(int a, int b)
 	{
