@@ -1,5 +1,5 @@
 //============================================================================
-// Name        : Parantheses.cpp
+// Name        : Parentheses.cpp
 // Author      : 
 // Version     :
 // Copyright   : Your copyright notice
